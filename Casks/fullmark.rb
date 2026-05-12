@@ -1,6 +1,6 @@
 cask "fullmark" do
   version "0.1.5"
-  sha256 "5879ad996e3dd5d4a48e456ed1842ae90f28b85b6f63da235f42c87dac8fa5f5"
+  sha256 "49c7e5f88a0935df2dd55c56a8b3013c234dfe3a30c73a4d5b01380a9c34fe45"
 
   url "https://github.com/thedumsieffect/fullmark/releases/download/v#{version}/FullMark_#{version}_aarch64.dmg"
   name "FullMark"

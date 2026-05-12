@@ -1,24 +1,34 @@
 # thedumsieffect/homebrew-tap
 
-Homebrew tap for [FullMark](https://github.com/thedumsieffect/fullmark) (and future casks).
+Homebrew tap for [FullMark](https://github.com/thedumsieffect/fullmark) — a Notion-style markdown editor on plain `.md` files.
 
 ## Install
 
 ```bash
-brew tap thedumsieffect/tap
-brew install --cask fullmark
+brew install --cask --no-quarantine thedumsieffect/tap/fullmark
 ```
 
-Or in one shot:
+`--no-quarantine` skips the macOS first-launch Gatekeeper dialog (FullMark is open-source but not yet Apple-notarized). If you'd rather not pass that flag, drop it — you'll get a one-time dialog asking to confirm the launch.
+
+If you find yourself doing this a lot:
 
 ```bash
-brew install --cask thedumsieffect/tap/fullmark
+echo 'export HOMEBREW_CASK_OPTS="--no-quarantine"' >> ~/.zshrc
 ```
 
-Homebrew strips the macOS quarantine attribute on install, so the app launches without the right-click → Open dance.
+…and brew will default to `--no-quarantine` for every cask install going forward.
 
 ## Update
 
 ```bash
 brew upgrade --cask fullmark
 ```
+
+## Uninstall
+
+```bash
+brew uninstall --cask fullmark
+brew untap thedumsieffect/tap
+```
+
+(`brew uninstall --zap --cask fullmark` also wipes settings.)
